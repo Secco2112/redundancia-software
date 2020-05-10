@@ -1,0 +1,164 @@
+body{
+    &.home{
+        position: relative;
+        width: 100%;
+        height: 100vh !important;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        #bg-overlay{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            opacity: 0.9;
+            z-index: -1;
+        }
+        .main_wrapper{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid #c3c3c3;
+            border-radius: 4px;
+            padding: 30px;
+            position: relative;
+            i{
+                position: absolute;
+                color: #e2e2e2;
+                top: 10px;
+                left: 10px;
+                cursor: pointer;
+            }
+            .logo{
+                width: 110px;
+            }
+            #main_form{
+                margin-top: 50px;
+                width: 500px;
+                position: relative;
+                .form-group{
+                    position: relative;
+                    #postcode{
+                        text-align: center;
+                        background-color: transparent;
+                        color: #e2e2e2;
+                        border-radius: 0px;
+                        box-shadow: none;
+                        border: none;
+                        border-bottom: 1px solid #f17f53;
+                        position: relative;
+                        &:focus{
+                            & ~ span{
+                                width: 100%;
+                            }
+                        }
+                        &::placeholder {
+                            color: #b7b7b7;
+                            opacity: 1;
+                        }
+                        &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+                            color: #b7b7b7;
+                        }
+                        &::-ms-input-placeholder { /* Microsoft Edge */
+                            color: #b7b7b7;
+                        }
+                    }
+                    .gambi__border{
+                        position: absolute;
+                        bottom: -2px;
+                        width: 0px;
+                        height: 3px;
+                        background-color: #e23f37;
+                        transition: 0.2s all ease-in-out;
+                    }
+                    #fetch__postcode__data{
+                        position: absolute;
+                        right: 0;
+                        top: -4px;
+                        background-color: #e5e5e5;
+                        border: 1px solid #e5e5e5;
+                        color: #a6a6a6;
+                        font-size: 14px;
+                        &:before, &:after{
+                            content: '';
+                            border-style: solid;
+                            position: absolute;
+                            z-index: 5;
+                            border-radius: 3px;
+                            box-sizing: content-box;
+                            border-color: #34495e;
+                            -webkit-transition: all 0.3s;
+                            transition: all 0.3s;
+                        }
+                        &:before{
+                            width: 0;
+                            height: 100%;
+                            border-width: 1px 0 1px 0;
+                            top: -1px;
+                            left: 0;
+                            -webkit-transition-delay: 0.05s;
+                            transition-delay: 0.05s;
+                        }
+                        &:after{
+                            width: 100%;
+                            height: 0;
+                            border-width: 0 1px 0 1px;
+                            top: 0;
+                            left: -1px;
+                        }
+                        &:hover{
+                            color: #fff;
+                            background-color: transparent;
+                            &:before{
+                                border-color: #34495e;
+                                width: 100%;
+                            }
+                            &:after{
+                                border-color: #34495e;
+                                height: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+            .preview__postcode__data{
+                .preview__loading{
+                    opacity: 0;
+                    visibility: hidden;
+                    max-height: 0;
+                    transition: 0.5s all ease-in-out;
+                    svg{
+                        width: 80px;
+                        height: 80px;
+                    }
+                }
+                .wrapper{
+                    opacity: 0;
+                    visibility: hidden;
+                    max-height: 0;
+                    transition: 1s all ease-in-out;
+                    .info{
+                        margin-top: 15px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        list-style-type: none;
+                        li{
+                            margin-top: 10px;
+                            color: #fff;
+                            line-height: 1em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.swal2-height-auto.swal2-shown{
+        height: 100vh !important;
+    }
+}
